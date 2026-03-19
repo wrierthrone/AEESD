@@ -44,6 +44,7 @@ body {
 .logo {
     display: flex;
     width: 100%;
+    justify-content: start;
 }
 
 .logo img {
@@ -59,7 +60,6 @@ body {
 .nav {
     display: flex;
     justify-content: left;
-
     align-items: center;
 }
 
@@ -70,6 +70,8 @@ body {
     margin-right: 50px;
     color: #FFFFFF;
     border: 2px solid #000000;
+    transition: all 0.3s ease;
+
 }
 
 
@@ -79,6 +81,10 @@ body {
     border-top: 2px solid #1A1A1A;
     border-radius: 8px;
     padding: 10px;
+}
+
+.nav a:hover {
+    transform: translate(-2px, -2px) scale(1.02);
 }
 
 .a-timeline {
@@ -145,10 +151,11 @@ body {
 }
 
 .card:hover {
-    transform: translate(-2px, -2px);
+    transform: translate(-8px, -8px) scale(1.02);
+
     box-shadow:
-        6px 6px 0px #000,
-        0 12px 25px rgba(0, 0, 0, 0.2);
+        12px 12px 0px #000,
+        0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 .card h2 {
