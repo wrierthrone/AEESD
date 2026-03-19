@@ -30,12 +30,82 @@ body {
     -webkit-tap-highlight-color: transparent;
     line-height: 1.5;
     min-height: 100vh;
-    background-color: #FFF8F6DE;
+    background: #FFF8F6DE;
 
     background-image:
         linear-gradient(#ccc 1px, transparent 1px),
         linear-gradient(90deg, #ccc 1px, transparent 1px);
     background-size: 40px 40px;
+
+    overflow-x: hidden;
+}
+
+
+.logo {
+    display: flex;
+    width: 100%;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.header {
+    background: #FFF8F6DE;
+    padding: 20px 60px;
+    color: #efe6d8;
+}
+
+.nav {
+    display: flex;
+    justify-content: left;
+
+    align-items: center;
+}
+
+.nav a {
+    font-family: Krona One;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 50px;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+}
+
+
+.a-timeline,
+.a-quiz,
+.a-sobre {
+    border-top: 2px solid #1A1A1A;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.a-timeline {
+    background-color: #10A5DA;
+}
+
+.a-quiz {
+    background: #EB8EC7;
+
+}
+
+.a-sobre {
+    background: #F4C682;
+
+}
+
+.titulo-semana {
+    padding-top: 3.5vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-semana img {
+    width: 269.80413818359375px;
 }
 
 .timeline-item {
@@ -45,60 +115,16 @@ body {
 
 .timeline-content {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
     gap: 40px;
 }
 
-.header {
-    background: #10096d;
-    padding: 20px 60px;
-    color: #efe6d8;
-}
 
-.nav {
+.timeline-center {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 }
-
-.nav a {
-    text-decoration: none;
-    color: #1f4fa3;
-    font-weight: bold;
-    margin-right: 20px;
-    color: #efe6d8;
-}
-
-.titulo-semana {
-    padding-top: 3.5vh;
-    display: grid;
-    place-items: center;
-}
-
-.titulo-semana {
-    position: relative;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-
-.titulo-semana img {
-    width: 269.80413818359375px;
-}
-
-.timeline-item {
-    padding: 80px 20px;
-    position: relative;
-}
-
-.timeline-content {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-}
-
-
 
 .card {
     position: relative;
@@ -151,12 +177,6 @@ body {
     font-weight: bold;
 }
 
-.timeline-center {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
 .fala {
     position: absolute;
     top: -20px;
@@ -179,12 +199,6 @@ body {
     .nav {
         flex-direction: column;
         gap: 20px;
-    }
-
-    .menu-left,
-    .menu-right {
-        display: flex;
-        gap: 15px;
     }
 
 }
