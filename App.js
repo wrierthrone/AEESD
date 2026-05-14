@@ -19,3 +19,9 @@ function updateTimelineLine() {
 // roda ao carregar e ao redimensionar
 window.addEventListener('load', updateTimelineLine);
 window.addEventListener('resize', updateTimelineLine);
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl =>
+  new bootstrap.Popover(popoverTriggerEl)
+)
