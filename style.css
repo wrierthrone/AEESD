@@ -69,19 +69,25 @@ body {
 
 .nav {
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .nav a {
     font-family: Krona One;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 50px;
     color: #FFFFFF;
     border: 2px solid #000000;
     transition: all 0.3s ease;
-
+    white-space: nowrap;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: fit-content;
 }
 
 
@@ -90,7 +96,6 @@ body {
 .a-sobre {
     border-top: 2px solid #1A1A1A;
     border-radius: 8px;
-    padding: 10px;
 }
 
 .nav a:hover {
@@ -231,3 +236,184 @@ body {
     width: 100%;
     height: 120px;
 } */
+
+/* Classe responsiva para imagens */
+.img,
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media queries para telas menores */
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 30px;
+    }
+
+    .nav a {
+        margin-right: 30px;
+        font-size: 0.9rem;
+    }
+
+    .timeline-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 200px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .icone-nav {
+        max-width: 100%;
+    }
+
+    .nav a {
+        margin-right: 0;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        width: fit-content;
+        text-align: center;
+    }
+
+    .titulo-semana {
+        margin-bottom: 30px;
+    }
+
+    .titulo-semana img {
+        max-width: 150px;
+    }
+
+    .timeline-item {
+        padding: 60px 15px;
+    }
+
+    .timeline-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 15px;
+        box-shadow: 2px 2px 0px #000, 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover {
+        box-shadow: 4px 4px 0px #000, 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+
+    .timeline-center img,
+    .side img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        background-size: 20px 20px;
+    }
+
+    .header {
+        padding: 8px 15px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    .nav a {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        margin-right: 0;
+    }
+
+    .nav a img {
+        display: none;
+    }
+
+    .titulo-semana {
+        padding-top: 2vh;
+        margin-bottom: 20px;
+    }
+
+    .titulo-semana img {
+        max-width: 100px;
+    }
+
+    .timeline-item {
+        padding: 40px 10px;
+    }
+
+    .card {
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .card h2 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 0.7rem;
+        line-height: 16px;
+    }
+
+    .buttons button {
+        padding: 10px 15px;
+        margin-right: 10px;
+        font-size: 0.8rem;
+    }
+
+    .fala {
+        top: -15px;
+        left: 20px;
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}

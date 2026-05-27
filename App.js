@@ -7,18 +7,48 @@ function updateTimelineLine() {
     const firstTitleBottom = titulo.getBoundingClientRect().bottom + window.scrollY;
 
     const lastCenter = centers[centers.length - 1];
-    const lastCenterTop = lastCenter.getBoundingClientRect().top + window.scrollY;
+    const lastCenterRect = lastCenter.getBoundingClientRect();
+    const lastCenterCenter = lastCenter.getBoundingClientRect().top + window.scrollY + (lastCenterRect.height / 2);
 
     const lineStart = firstTitleBottom;
-    const lineHeight = lastCenterTop - firstTitleBottom;
+    const lineHeight = lastCenterCenter - firstTitleBottom;
 
     document.body.style.setProperty('--line-start', lineStart + 'px');
     document.body.style.setProperty('--line-height', lineHeight + 'px');
 }
 
-// roda ao carregar e ao redimensionar
-window.addEventListener('load', updateTimelineLine);
+// Aguardar todas as imagens carregarem antes de calcular
+function initTimeline() {
+    const images = document.querySelectorAll('img');
+    let loadedCount = 0;
+
+    if (images.length === 0) {
+        updateTimelineLine();
+        return;
+    }
+
+    images.forEach(img => {
+        if (img.complete) {
+            loadedCount++;
+        } else {
+            img.addEventListener('load', () => {
+                loadedCount++;
+                if (loadedCount === images.length) {
+                    updateTimelineLine();
+                }
+            });
+        }
+    });
+
+    if (loadedCount === images.length) {
+        updateTimelineLine();
+    }
+}
+
+// Popover
+window.addEventListener('load', initTimeline);
 window.addEventListener('resize', updateTimelineLine);
+window.addEventListener('scroll', updateTimelineLine);
 
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 
