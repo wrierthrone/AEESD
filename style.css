@@ -7,6 +7,7 @@
 
 html {
     font-size: 25px;
+    background: #FFF8F6DE;
 }
 
 .body-line-fix {
@@ -16,15 +17,16 @@ html {
 body {
     -webkit-tap-highlight-color: transparent;
     line-height: 1.5;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
+    margin: 40px;
     background: #FFF8F6DE;
 
     background-image:
-        linear-gradient(#ccc 1px, transparent 1px),
+        linear-gradient(#cccccc 1px, transparent 1px),
         linear-gradient(90deg, #ccc 1px, transparent 1px);
     background-size: 40px 40px;
-    background-clip: padding-box;
-    background-origin: content-box;
+    background-position: 0 0;
+    background-clip: border-box;
 
     overflow-x: hidden;
 }
@@ -50,7 +52,7 @@ body {
 }
 
 .header {
-    
+
     background: #fff8f6;
     padding: 20px 60px;
     color: #efe6d8;
@@ -77,6 +79,7 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 1500px;
+    --line-color: #2aa4c8;
     --line-width: 6px;
     --line-style: solid;
 }
@@ -87,11 +90,22 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: var(--line-width);
-    background: var(--line-color);
+    background-color: var(--line-color, #2aa4c8);
     top: var(--line-start, 0px);
     height: var(--line-height, 0px);
-    z-index: -1;
+    opacity: 1;
+    z-index: 0;
     border-radius: 999px;
+}
+
+.semana a {
+    text-decoration: none;
+}
+
+.semana a h1 {
+    font-size: clamp(1.5rem, 3rem, 4rem);
+    transition: color 0.3s ease;
+    font-family: 'Squada One';
 }
 
 .semana-1 {
@@ -99,9 +113,26 @@ body {
     --line-width: 6px;
 }
 
+.semana-1 a h1 {
+    color: #2aa4c8;
+}
+
 .semana-2 {
     --line-color: #EB8EC7;
     --line-width: 6px;
+}
+
+.semana-2 a h1 {
+    color: #EB8EC7;
+}
+
+.semana .titulo-semana,
+.semana .timeline-item,
+.semana .timeline-center,
+.semana .card,
+.semana .side {
+    position: relative;
+    z-index: 1;
 }
 
 .nav a {
@@ -118,7 +149,6 @@ body {
     gap: 10px;
     min-width: fit-content;
 }
-
 
 .a-timeline,
 .a-quiz,
@@ -177,9 +207,13 @@ body {
     justify-content: center;
 }
 
+.timeline-center img {
+    width: 100%;
+}
+
 .card {
     position: relative;
-    width: 400px;
+    width: 520px;
     border-radius: 8px;
     border: 2px solid #1A1A1A;
     background-color: #10A5DA4F;
@@ -239,12 +273,12 @@ body {
 }
 
 /* Classe responsiva para imagens */
-.img,
+/* .img,
 img {
     max-width: 100%;
     height: auto;
     display: block;
-}
+} */
 
 /* Media queries para telas menores */
 @media (max-width: 1024px) {

@@ -13,8 +13,8 @@ function updateTimelineLine() {
         const lastCenterRect = lastCenter.getBoundingClientRect();
         const lastCenterCenter = lastCenterRect.top + (lastCenterRect.height / 2);
 
-        const lineStart = firstTitleBottom - semanaRect.top;
-        const lineHeight = lastCenterCenter - firstTitleBottom;
+        const lineStart = Math.max(0, firstTitleBottom - semanaRect.top);
+        const lineHeight = Math.max(0, lastCenterCenter - firstTitleBottom);
 
         semana.style.setProperty('--line-start', `${lineStart}px`);
         semana.style.setProperty('--line-height', `${lineHeight}px`);
