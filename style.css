@@ -114,7 +114,7 @@ body {
     --line-width: 6px;
 }
 
-.semana-1 h1{
+.semana-1 h1 {
     color: #2aa4c8;
 }
 
@@ -244,6 +244,31 @@ body {
     font-family: 'Squada One';
 }
 
+.side.semana-1-2 {
+    display: inline-block;
+    transform: rotate(-6.68deg);
+    transform-origin: center center;
+    background-image: url('img/semana-1-2-post it.png');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 520px;
+}
+
+.side p,
+.side strong {
+    line-height: 25;
+    width: 400px;
+    font-size: clamp(0.3rem, 0.7rem, 1rem);
+    text-align: align-left;
+    font-family: 'Krona One';
+    color: #000000;
+    line-height: 28px;
+}
 
 .card p {
     font-size: clamp(0.7rem, 2vw, 1rem);
